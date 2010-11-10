@@ -1,1 +1,8 @@
-<h1>Tweets</h1>
+<%= form_tag tweets_path, :method => :get do %>
+  <%= text_field_tag :query %>
+  <button type="submit">Search</button>
+<% end %>
+
+<% if @docs %>
+  <p>Your search for "<%= params[:query] %>" returned <%= pluralize @docs['matches'], 'result' %></p>
+<% end %>

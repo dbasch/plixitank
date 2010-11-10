@@ -23,7 +23,7 @@ class TweetIndexer
   end
 
   # load tweets from Plixi API into IndexTank
-  def self.index
+  def self.load
     uri = 'http://api.plixi.com/api/tpapi.svc/json/photos?getuser=true'
 
     photos = JSON.parse(open(uri).read)

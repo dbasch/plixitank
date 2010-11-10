@@ -1,5 +1,5 @@
 require 'open-uri'
-require 'lib/indextank_client'
+require 'indextank_client'
 
 class TweetIndexer
   def self.index

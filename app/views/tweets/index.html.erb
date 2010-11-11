@@ -7,7 +7,7 @@
   <p>Your search for "<%= params[:query] %>" returned <%= pluralize @docs['matches'], 'result' %></p>
 
   <ul id="results">
-    <% @docs.each do |doc| %>
+    <% @docs['results'].each do |doc| %>
       <li>
         <%= link_to "http://plixi.com/p/#{doc.id}" do %>
           <%= image_tag doc.thumbnail_url %>

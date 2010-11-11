@@ -60,8 +60,7 @@ module IndexTank
       elsif res.is_a? Net::HTTPBadRequest
         raise ArgumentError, res.body
       else
-        p res
-        puts 'hey'
+        raise res.inspect
         raise HttpCodeException.new(res.code, res.body)
       end
     end

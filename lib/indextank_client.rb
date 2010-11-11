@@ -60,7 +60,8 @@ module IndexTank
       elsif res.is_a? Net::HTTPBadRequest
         raise ArgumentError, res.body
       else
-        raise res.inspect
+        p res
+        puts 'hey'
         raise HttpCodeException.new(res.code, res.body)
       end
     end
@@ -249,7 +250,7 @@ module IndexTank
 
   class HerokuClient < ApiClient
     def initialize()
-      super(ENV['HEROKUTANK_API_URL'])
+      super(ENV['HEROKUTANK_API_URL'] || 'http://:iyr4Dcucz3t2BM@8ihre.api.indextank.com')
     end
   end
 end

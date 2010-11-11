@@ -22,7 +22,7 @@ class Tweet
   end
 
   def indexable?
-    self.message.present?
+    @data.has_key?('Message')
   end
 
   def method_missing(name, *args, &block)

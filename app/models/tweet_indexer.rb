@@ -4,7 +4,7 @@ require 'indextank_client'
 class TweetIndexer
   def self.index
     @api ||= IndexTank::HerokuClient.new
-    @index = @api.get_index 'plixi'
+    @index ||= @api.get_index 'plixi'
 
     create_index unless @index.exists?
 

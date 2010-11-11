@@ -1,10 +1,9 @@
 require 'open-uri'
-require 'indextank_client'
 
 class TweetIndexer
   def self.index
-    @api ||= IndexTank::HerokuClient.new
-    @index ||= @api.get_index 'plixi'
+    @api ||= IndexTank::Client.new(ENV['HEROKUTANK_API_URL'])
+    @index ||= @api.indexes('plixi')
 
     create_index unless @index.exists?
 
@@ -12,7 +11,7 @@ class TweetIndexer
   end
 
   def self.create_index
-    @index.create_index
+    @index.add
     while not @index.running?
       puts 'waiting for index to start...'
       sleep 1
@@ -33,7 +32,7 @@ class TweetIndexer
 
     list.each do |data|
       tweet = Tweet.new(data)
-      index.add_document(tweet.id, tweet.to_document) if tweet.indexable?
+      index.document(tweet.id).add(tweet.to_document) if tweet.indexable?
     end
   end
 end

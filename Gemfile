@@ -1,9 +1,10 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.1'
-gem 'pg'
-gem 'json_pure', :require => 'json'
-gem 'crack'
+gem 'pg', '0.9.0'
+gem 'json_pure', '1.4.6', :require => 'json'
+gem 'crack', '0.1.8'
+gem 'indextank', '0.0.1', :git => 'https://github.com/hone/indextank-rb.git'
 
 group :development, :test do
   gem 'sqlite3-ruby', :require => 'sqlite3'

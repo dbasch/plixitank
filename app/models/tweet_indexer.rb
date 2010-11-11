@@ -6,12 +6,14 @@ class TweetIndexer
     @api ||= IndexTank::HerokuClient.new
     @index = @api.get_index 'plixi'
 
-    create_index unless index.exists?
+    create_index unless @index.exists?
+
+    @index
   end
 
   def self.create_index
-    index.create_index
-    while not index.running?
+    @index.create_index
+    while not @index.running?
       puts 'waiting for index to start...'
       sleep 1
     end
@@ -19,7 +21,7 @@ class TweetIndexer
 
   # retrieve tweets from IndexTank
   def self.search(query)
-    index.search(query, :snippet=>'text', :fetch=>'thumbnail_url,screen_name,plixi_id,timestamp')
+    @index.search(query, :snippet=>'text', :fetch=>'thumbnail_url,screen_name,plixi_id,timestamp')
   end
 
   # load tweets from Plixi API into IndexTank
@@ -31,7 +33,7 @@ class TweetIndexer
 
     list.each do |data|
       tweet = Tweet.new(data)
-      index.add_document(tweet.id, tweet.to_document) if tweet.indexable?
+      @index.add_document(tweet.id, tweet.to_document) if tweet.indexable?
     end
   end
 end

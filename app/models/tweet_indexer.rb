@@ -33,7 +33,7 @@ class TweetIndexer
 
     list.each do |data|
       tweet = Tweet.new(data)
-      @index.add_document(tweet.id, tweet.to_document) if tweet.indexable?
+      index.add_document(tweet.id, tweet.to_document) if tweet.indexable?
     end
   end
 end

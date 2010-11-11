@@ -13,6 +13,8 @@
           <%= image_tag doc['thumbnail_url'] %>
           <%= doc['screen_name'] %> -
           <%= time_ago_in_words Time.at(doc['timestamp'].to_i) %>
+
+          <%= simple_format doc['text'] %>
         <% end %>
       </li>
     <% end %>

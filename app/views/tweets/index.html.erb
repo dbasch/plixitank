@@ -12,7 +12,7 @@
         <%= link_to "http://plixi.com/p/#{doc['plixi_id']}" do %>
           <%= image_tag doc['thumbnail_url'] %>
           <%= doc['screen_name'] %> -
-          <%= time_ago_in_words Time.at(doc['timestamp']) %>
+          <%= time_ago_in_words Time.at(doc['timestamp'].to_i) %>
         <% end %>
       </li>
     <% end %>

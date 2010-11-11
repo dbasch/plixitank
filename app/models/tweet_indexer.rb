@@ -21,7 +21,7 @@ class TweetIndexer
 
   # retrieve tweets from IndexTank
   def self.search(query)
-    @index.search(query, :snippet=>'text', :fetch=>'thumbnail_url,screen_name,plixi_id,timestamp')
+    index.search(query, :snippet=>'text', :fetch=>'thumbnail_url,screen_name,plixi_id,timestamp')
   end
 
   # load tweets from Plixi API into IndexTank

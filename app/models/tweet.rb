@@ -7,6 +7,10 @@ class Tweet
     @data['Id']
   end
 
+  def screen_name
+    self.user['ScreenName']
+  end
+
   def to_document
     {
       :plixi_id      => self.id,

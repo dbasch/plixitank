@@ -30,6 +30,9 @@ ul#results {
   margin: 0;
   padding: 0;
 }
+li {
+  clear: left;
+}
 li a {
   color: #333;
 }

@@ -1,0 +1,45 @@
+body, * {
+  font-family: helvetica, arial, sans-serif;
+}
+p#logo {
+  font-size: 2em;
+  margin: 0.5em 0;
+}
+
+a {
+  color: #888;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+input, button {
+  font-size: 2em;
+}
+
+p#result-count {
+  border-top: 1px dotted #888;
+  color: #666;
+  font-size: 0.8em;
+  margin-top: 2em;
+  padding-top: 1.8em;
+}
+ul#results {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+li a {
+  color: #333;
+}
+li a:hover {
+  text-decoration: none;
+}
+li img {
+  float: left;
+  margin: 0 8px 8px 0;
+}
+li p {
+  font-size: 0.8em;
+}

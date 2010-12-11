@@ -60,7 +60,6 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.16)
     multipart-post (1.0.1)
-    pg (0.9.0)
     polyglot (0.3.1)
     rack (1.2.1)
     rack-mount (0.6.13)
@@ -97,7 +96,6 @@ DEPENDENCIES
   factory_girl_rails (>= 1.0.0)
   indextank (= 0.0.1)!
   json_pure (= 1.4.6)
-  pg (= 0.9.0)
   rails (= 3.0.1)
   shoulda (>= 2.11.3)
   sqlite3-ruby

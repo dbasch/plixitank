@@ -1,6 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script type='text/javascript' src='http://plixitank.heroku.com//static/jquery.js'></script> 
+    <script type='text/javascript' src='http://plixitank.heroku.com/static/jquery.autocomplete.js'></script> 
+ 
+ 
+    <script> 
+        jQuery(window).load(function(){
+            var options, a;
+            options = {
+                serviceUrl:'http://d24bu.api.indextank.com/v1/indexes/herokutest/autocomplete',
+                params: {}
+            };
+            a = jQuery('#query').autocomplete(options);
+            
+        });
+</script> 
+
   <title>Plixi Search :: an IndexTank demo</title>
   <%= stylesheet_link_tag :all %>
   <%= csrf_meta_tag %>

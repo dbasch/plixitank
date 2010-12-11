@@ -2,8 +2,10 @@ require 'open-uri'
 
 class TweetIndexer
   def self.index
-    @api ||= IndexTank::Client.new(ENV['HEROKUTANK_API_URL'])
-    @index ||= @api.indexes('plixi')
+#@api ||= IndexTank::Client.new(ENV['HEROKUTANK_API_URL'])
+    @api ||= IndexTank::Client.new("http://:Az8QXRhHLzMRiJ@d24bu.api.indextank.com")
+   
+    @index ||= @api.indexes('herokutest')
 
     create_index unless @index.exists?
 
